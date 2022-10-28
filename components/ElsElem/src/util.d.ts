@@ -1,0 +1,10 @@
+import { Elem, Context, ElemAttrs, RenderFunction } from "./inter";
+export declare const isHtmlTag: (tag: string) => boolean;
+export declare const getElemAttrs: (elem: Elem, context: Context) => ElemAttrs;
+export declare const getSlotName: (elem: Elem) => string;
+export declare const parseDirective: (directive: Record<string, any>, scope: Record<string, any>) => Record<string, any>;
+export declare const getExpValue: (str: string, scope?: Record<string, any>) => string;
+export declare const getDestruct: (str: string, scope?: any) => Record<string, any>;
+export declare const specialRender: Record<string, RenderFunction>;
+export declare const defaultRender: RenderFunction;
+export declare const propsFilter: (props: Record<string, any>, extKeys: string[]) => import("lodash").Omit<Record<string, any>, string>;

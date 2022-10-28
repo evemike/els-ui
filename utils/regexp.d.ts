@@ -1,0 +1,11 @@
+export declare const RegEmail: RegExp;
+export declare const RegPhone: RegExp;
+export declare const RegHTTPURL: RegExp;
+export declare const RegTelephone: RegExp;
+export declare const RegIDCard: RegExp;
+export declare const RegIP: RegExp;
+export declare const RegChinese: RegExp;
+export declare const RegOneText: RegExp;
+export declare const RegNoSignOneText: RegExp;
+export declare const loopExec: (reg: RegExp, str: string, call: (res: RegExpExecArray) => void) => void;
+export declare const getTempValue: (str: string, ctx?: Record<string, any>, reg?: RegExp) => string;
