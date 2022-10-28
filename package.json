@@ -1,0 +1,58 @@
+{
+  "name": "els-ui",
+  "version": "1.0.0",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite --config ./build/base.config.ts",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts && node script/copyDir.js",
+    "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts && node script/copyToDist.js",
+    "build:move": "node script/copyToDist.js",
+    "create": "node ./script/genNewComp/index.js",
+    "change": "node ./script/changeComp/index.js",
+    "delete": "node ./script/deleteComp/index.js",
+    "update": "node ./script/updateComp/index.js",
+    "log": "node ./script/gitLog/index.js"
+  },
+  "dependencies": {
+    "element-plus": "^2.2.16",
+    "lodash": "^4.17.21",
+    "prismjs": "^1.29.0",
+    "vue": "^3.2.38",
+    "vue-i18n": "^9.2.2"
+  },
+  "devDependencies": {
+    "@rollup/pluginutils": "^4.2.1",
+    "@types/lodash": "^4.14.184",
+    "@types/node": "^18.7.15",
+    "@types/prismjs": "^1.26.0",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "fs-extra": "^10.1.0",
+    "handlebars": "^4.7.7",
+    "happy-dom": "^6.0.4",
+    "inquirer": "^8.0.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-emoji": "^2.0.2",
+    "markdown-it-shiki": "^0.5.1",
+    "sass": "^1.54.8",
+    "shelljs": "^0.8.5",
+    "typescript": "^4.8.2",
+    "vite": "^3.1.0",
+    "vite-plugin-build": "^0.6.0",
+    "vite-plugin-copy": "^0.1.6",
+    "vite-plugin-dts": "^1.4.1",
+    "vite-plugin-md": "^0.20.4",
+    "vue-router": "^4.1.5",
+    "vue-tsc": "^0.40.8"
+  }
+}
