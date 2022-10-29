@@ -1,0 +1,14 @@
+{
+  "name": "els-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./els-ui.umd.cjs",
+  "module": "./els-ui.js",
+  "exports": {
+    ".": {
+      "import": "./els-ui.js",
+      "require": "./els-ui.umd.cjs"
+    }
+  }
+}
