@@ -12884,7 +12884,7 @@ const h8 = /^\s*http/, _v = (e, n, r) => {
   emits: ["init-menu", "change", "select"],
   setup(e, { expose: n, emit: r }) {
     const i = e, s = X(""), l = p8(), c = i.initMenu || v8;
-    s.value = c(l, i.menus);
+    l && (s.value = c(l, i.menus));
     const f = (v) => {
       r("select", v), s.value !== String(v.id) && (s.value = String(v.id), r("change", v));
     }, h = (i.UIPluging || y8)(i, { currentId: s, handleSelect: f });
@@ -12896,7 +12896,7 @@ const h8 = /^\s*http/, _v = (e, n, r) => {
     ]));
   }
 });
-const E8 = /* @__PURE__ */ Ja(S8, [["__scopeId", "data-v-7d9fb007"]]), Bl = {
+const E8 = /* @__PURE__ */ Ja(S8, [["__scopeId", "data-v-729177ca"]]), Bl = {
   install(e) {
     e.component("els-menu", E8);
   }
