@@ -2,7 +2,6 @@
   "name": "els-ui",
   "version": "1.0.0",
   "type": "module",
-  "files": ["dist"],
   "main": "./els-ui.umd.cjs",
   "module": "./els-ui.js",
   "exports": {
@@ -10,5 +9,12 @@
       "import": "./els-ui.js",
       "require": "./els-ui.umd.cjs"
     }
+  },
+  "dependencies": {
+    "element-plus": "^2.2.19",
+    "lodash": "^4.17.21",
+    "prismjs": "^1.29.0",
+    "vue": "^3.2.41",
+    "vue-i18n": "^9.2.2"
   }
 }
