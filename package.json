@@ -1,0 +1,30 @@
+{
+  "name": "els-ui",
+  "version": "1.0.0",
+  "description": "A Component Library for Vue 3",
+  "keywords": [
+    "els-ui",
+    "component library",
+    "ui framework",
+    "ui",
+    "vue"
+  ],
+  "license": "MIT",
+  "main": "./els-ui.mjs",
+  "module": "./els-ui.mjs",
+  "unpkg": "./els-ui.umd.js",
+  "exports": {
+    ".": {
+      "import": "./els-ui.mjs",
+      "require": "./els-ui.umd.js",
+      "types": "./index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "style": "./style.css",
+  "scripts": {},
+  "author": "mike",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}
