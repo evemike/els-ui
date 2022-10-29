@@ -6,10 +6,10 @@
 import { Plugin } from 'vue';
 declare const MYLibPlugin: Plugin;
 export default MYLibPlugin;
-export * from './components/ElsElem';
-export * from './components/ElsForm';
-export * from './components/ElsExpBox';
-export * from './components/ElsScrollBar';
-export * from './components/ElsPage';
-export * from './components/ElsMenu';
-export * from './components/ElsSvg';
+export * as ElsElem from './components/ElsElem';
+export * as ElsForm from './components/ElsForm';
+export * as ElsExpBox from './components/ElsExpBox';
+export * as ElsScrollBar from './components/ElsScrollBar';
+export * as ElsPage from './components/ElsPage';
+export * as ElsMenu from './components/ElsMenu';
+export * as ElsSvg from './components/ElsSvg';
