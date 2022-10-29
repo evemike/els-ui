@@ -27,12 +27,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         (e: "init", params: InitParams): void;
         (e: "update:modelValue", val: string): void;
     };
-    props: {
-        modelValue: string;
-        isEdit: boolean;
-        mode: "text" | "box" | "border";
-        init?: ((params: InitParams) => void) | undefined;
-    };
+    props: any;
     boxRef: import("vue").Ref<HTMLDivElement | undefined>;
     modelValue: import("vue").Ref<string>;
     isEdit: import("vue").Ref<boolean>;

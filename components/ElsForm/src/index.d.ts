@@ -1,4 +1,4 @@
-import { ElsFormProps, ElsFormUIPluginConfig } from "./inter";
+import { ElsFormUIPluginConfig } from "./inter";
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
         type: null;
@@ -27,13 +27,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         (e: "update:modelValue", v: Record<string, any>): void;
         (e: "change", name: string, value: any): void;
     };
-    props: {
-        modelValue: ElsFormProps["modelValue"];
-        column: ElsFormProps["column"];
-        size: ElsFormProps["size"];
-        UIPluging?: ElsFormProps["UIPluging"];
-        autoClean: ElsFormProps["autoClean"];
-    };
+    props: any;
     slots: Readonly<{
         [name: string]: import("vue").Slot | undefined;
     }>;

@@ -5,9 +5,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         default: string;
     };
 }, {
-    props: {
-        direction: "vertical" | "horizontal";
-    };
+    props: any;
     direction: "vertical" | "horizontal";
     elsScrollBarRef: import("vue").Ref<HTMLDivElement | undefined>;
     parentElem: import("vue").ComputedRef<HTMLElement | null | undefined>;

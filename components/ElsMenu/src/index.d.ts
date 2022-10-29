@@ -29,17 +29,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         (e: "change", menu: MenuElem): void;
         (e: "select", menu: MenuElem): void;
     };
-    props: {
-        menus: ElsMenuProps["menus"];
-        collapse: ElsMenuProps["collapse"];
-        context: ElsMenuProps["context"];
-        initMenu?: ((route: {
-            path: string;
-            fullPath: string;
-            meta: Record<string, any>;
-        }, menus: MenuElem[]) => string) | undefined;
-        UIPluging?: import("./inter").ElsMenuUIPlugin | undefined;
-    };
+    props: any;
     currentId: import("vue").Ref<string>;
     route: import("vue-router").RouteLocationNormalizedLoaded;
     initMenuFun: (route: {
