@@ -1,10 +1,11 @@
 import { Component, Ref } from "vue";
 import { Elem, Context } from "../../ElsElem";
-import { Router } from "vue-router";
+import { Router, RouteLocationNormalizedLoaded } from "vue-router";
 export declare type RouterLocationRaw = Parameters<Router["push"]>[0];
 export interface MenuElem extends Record<string, any> {
     id: string | number;
     title?: string;
+    name?: string;
     path?: RouterLocationRaw;
     handle?: (menu?: MenuElem) => void;
     icon?: string | Component;
@@ -15,11 +16,7 @@ export interface ElsMenuProps {
     menus: MenuElem[];
     collapse: boolean;
     context: Record<string, any>;
-    initMenu: (route: {
-        path: string;
-        fullPath: string;
-        meta: Record<string, any>;
-    }, menus: MenuElem[]) => string;
+    initMenu: (route: RouteLocationNormalizedLoaded, menus: MenuElem[]) => string;
     UIPluging: ElsMenuUIPlugin;
 }
 export declare type ElsMenuUIPlugin = (props: Pick<ElsMenuProps, "menus" | "context" | "collapse">, cfg: ElsMenuUIPluginConfig) => {
