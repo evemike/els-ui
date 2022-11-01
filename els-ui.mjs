@@ -18606,7 +18606,7 @@ const ElsSvgPlugin = {
 const useElMenu = (props, cfg) => {
   const attrs = useAttrs$1();
   const elMenuAttrs = (attrs == null ? void 0 : attrs.elMenu) || {};
-  const menus = props.menus;
+  const menus = toRef(props, "menus");
   const collapse = toRef(props, "collapse");
   const currentId = cfg.currentId;
   const tag = (props2) => {
