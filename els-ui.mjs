@@ -1,4 +1,4 @@
-import { unref, renderSlot, resolveDynamicComponent, createVNode, h, defineComponent, computed, mergeProps, isVNode, resolveComponent, ref, watch, getCurrentScope, onScopeDispose, getCurrentInstance, onMounted, nextTick, openBlock, createElementBlock, createElementVNode, warn, inject, toRef, onUnmounted, isRef, onBeforeUnmount, onBeforeMount, provide, shallowRef, useAttrs as useAttrs$1, useSlots, withDirectives, createCommentVNode, Fragment, normalizeClass, createBlock, withCtx, withModifiers, toDisplayString, normalizeStyle, vShow, Transition, reactive, onUpdated, cloneVNode, Text, Comment, Teleport, readonly, onDeactivated, renderList, toRaw, vModelCheckbox, createTextVNode, toRefs, vModelRadio, toHandlers, markRaw, effectScope, watchEffect, triggerRef, resolveDirective, withKeys, vModelText, createSlots } from "vue";
+import { unref, renderSlot, resolveDynamicComponent, createVNode, h, defineComponent, mergeProps, computed, isVNode, resolveComponent, ref, watch, getCurrentScope, onScopeDispose, getCurrentInstance, onMounted, nextTick, openBlock, createElementBlock, createElementVNode, warn, inject, toRef, onUnmounted, isRef, onBeforeUnmount, onBeforeMount, provide, shallowRef, useAttrs as useAttrs$1, useSlots, withDirectives, createCommentVNode, Fragment, normalizeClass, createBlock, withCtx, withModifiers, toDisplayString, normalizeStyle, vShow, Transition, reactive, onUpdated, cloneVNode, Text, Comment, Teleport, readonly, onDeactivated, renderList, toRaw, vModelCheckbox, createTextVNode, toRefs, vModelRadio, toHandlers, markRaw, effectScope, watchEffect, triggerRef, resolveDirective, withKeys, vModelText, createSlots } from "vue";
 import { useRouter, useRoute } from "vue-router";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var lodash = { exports: {} };
@@ -5661,6 +5661,7 @@ const ElsElem = defineComponent({
     slots: Object
   },
   setup(props, ctx) {
+    var _a2, _b;
     const elem = props.elem || {};
     const context3 = props.context || {};
     const parent = props.parent;
@@ -5670,18 +5671,10 @@ const ElsElem = defineComponent({
       context3.slots || {},
       props.slots || ctx.slots
     );
-    const tag = computed(() => {
-      var _a2, _b;
-      const t = (_b = (_a2 = unref(elem == null ? void 0 : elem.tag)) != null ? _a2 : unref(context3 == null ? void 0 : context3.tag)) != null ? _b : "div";
-      if (typeof t == "function" && t.name === "tag") {
-        return t(props, ctx);
-      }
-      return t;
-    });
-    const tagname = computed(
-      () => typeof tag.value === "string" ? tag.value : lodash.exports.kebabCase(tag.value.name)
-    );
-    const isHtml = computed(() => isHtmlTag(unref(tagname)));
+    const et2 = (_b = (_a2 = unref(elem == null ? void 0 : elem.tag)) != null ? _a2 : unref(context3 == null ? void 0 : context3.tag)) != null ? _b : "div";
+    const tag = typeof et2 === "function" ? et2(props, ctx) : et2;
+    const tagname = typeof unref(tag) === "string" ? unref(tag) : lodash.exports.kebabCase(unref(tag).name);
+    const isHtml = isHtmlTag(tagname);
     let elemSetupRes = {};
     let ctxSetupRes = {};
     const setupRes = { prop: {} };
@@ -5774,7 +5767,7 @@ const ElsElem = defineComponent({
       ), excludeKeys);
       const children = createChildren(scope);
       const config3 = {
-        tag: tag.value,
+        tag: unref(tag),
         tagname: name,
         isHtml: scope.$isHtml,
         props: elemProps,
@@ -26837,7 +26830,7 @@ const useElMenu = (props, cfg) => {
   const collapse = toRef(props, "collapse");
   const currentId = cfg.currentId;
   const tag = (props2) => {
-    const elem2 = props2.elem;
+    const elem2 = props2.elem || {};
     const type4 = elem2.type || "item";
     switch (type4) {
       case "group":
